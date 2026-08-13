@@ -1,36 +1,32 @@
 [
   {
     "id": "SC-001",
-    "ac_id": "AC-002",
-    "name": "SC-001: Successful Login Redirects to Inventory",
-    "objective": "Login to https://www.saucedemo.com/ as standard_user with password secret_sauce, select \"Price (low to high)\" from the sort dropdown, and verify the price $7.99 is visible.",
-    "healed_from": "Login to https://www.saucedemo.com/ as standard_user with password secret_sauce, click the Products heading, and verify the text Products is visible."
+    "ac_id": "AC-001",
+    "name": "SC-001: Products Page Loads and Displays Catalog",
+    "objective": "Navigate to https://automationexercise.com/products and verify the text All Products is visible."
   },
   {
     "id": "SC-002",
-    "ac_id": "AC-009",
-    "name": "SC-002: Cart Badge Updates on Add to Cart",
-    "objective": "Login to https://www.saucedemo.com/ as standard_user with password secret_sauce, click the Add to cart button for Sauce Labs Backpack, and verify the cart badge shows 1."
+    "ac_id": "AC-002",
+    "name": "SC-002: Add Product to Cart Shows Confirmation",
+    "objective": "Navigate to https://automationexercise.com/products, click the Add to cart button for Blue Top, and verify the text Added! is visible."
   },
   {
     "id": "SC-003",
-    "ac_id": "AC-004",
-    "name": "SC-003: Product Name Opens Detail Page",
-    "objective": "Login to https://www.saucedemo.com/ as standard_user with password secret_sauce, click the product name Sauce Labs Backpack, and verify the Add to cart button is visible.",
-    "healed_from": "Login to https://www.saucedemo.com/ as standard_user with password secret_sauce, click the product name Sauce Labs Backpack, and verify the product detail page shows the Add to cart button."
+    "ac_id": "AC-003",
+    "name": "SC-003: View Product Opens Detail Page",
+    "objective": "Navigate to https://automationexercise.com/products, click the View Product link for Blue Top, and verify the text Write Your Review is visible."
   },
   {
     "id": "SC-004",
-    "ac_id": "AC-013",
-    "name": "SC-004: Cart Page Lists Added Items",
-    "objective": "Login to https://www.saucedemo.com/ as standard_user with password secret_sauce, add the Sauce Labs Backpack to the cart, and verify the cart badge shows 1.",
-    "healed_from": "Login to https://www.saucedemo.com/ as standard_user with password secret_sauce, click the cart icon, and verify the item name Sauce Labs Backpack is visible."
+    "ac_id": "AC-004",
+    "name": "SC-004: Cart Page Is Accessible",
+    "objective": "Navigate to https://automationexercise.com/view_cart and verify the text Shopping Cart is visible."
   },
   {
     "id": "SC-005",
-    "ac_id": "AC-016",
-    "name": "SC-005: Sort Price Low to High Shows Cheapest First",
-    "objective": "Login to https://www.saucedemo.com/ as standard_user with password secret_sauce, select Price (low to high) from the sort dropdown, and verify the price $7.99 is visible.",
-    "healed_from": "Login to https://www.saucedemo.com/ as standard_user with password secret_sauce, select Price (low to high) from the sort dropdown, and verify the price $7.99 is visible."
+    "ac_id": "AC-005",
+    "name": "SC-005: Login Page Displays Login Form",
+    "objective": "Navigate to https://automationexercise.com/login and verify the text Login to your account is visible."
   }
 ]
