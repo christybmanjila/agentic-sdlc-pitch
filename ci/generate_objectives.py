@@ -57,7 +57,7 @@ BAD (NEVER write these):
   "...add to cart and verify badge, then click Remove and verify..." — TWO verifications
 
 App URL: {base_url}
-App credentials: username={username}, password={password}
+App credentials: {creds_text}
 
 Acceptance Criteria:
 {ac_text}
@@ -83,7 +83,9 @@ def main():
         sys.exit(1)
 
     analyzed = json.loads(ANALYZED_FILE.read_text())
-    base_url  = analyzed.get("base_url", "https://www.saucedemo.com/")
+    base_url  = analyzed.get("base_url", "")
+    if not base_url:
+        print("WARNING: no base_url in analyzed_requirements.json — objectives may lack a target URL", file=sys.stderr)
     acs       = analyzed.get("acceptance_criteria", [])
 
     if not acs:
@@ -112,9 +114,7 @@ def main():
         if m_pass:
             password = m_pass.group(1)
 
-    # Fall back to saucedemo defaults
-    username = username or "standard_user"
-    password = password or "secret_sauce"
+    creds_text = f"username={username}, password={password}" if username and password else "none — app does not require login"
 
     api_key = os.environ.get("ANTHROPIC_API_KEY", "")
     if not api_key:
@@ -130,8 +130,7 @@ def main():
     client = anthropic.Anthropic(api_key=api_key)
     prompt = OBJECTIVES_PROMPT.format(
         base_url=base_url,
-        username=username,
-        password=password,
+        creds_text=creds_text,
         ac_text=ac_text,
     )
 
